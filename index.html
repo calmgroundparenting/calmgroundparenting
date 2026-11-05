@@ -1,0 +1,230 @@
+<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover"><meta name="description" content="The Autism Parent Survival System: a practical, evidence-informed 30-day guide for parents of autistic children, by Calm Ground Parenting.">
+<title>Calm Ground Parenting</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,500;9..144,600&family=Source+Serif+4:ital,opsz,wght@0,8..60,400;0,8..60,600;1,8..60,400&family=Inter:wght@500;600&display=swap">
+<style>
+/* Layout: one calm reading column; a five-zone regulation strip carries the brand from hero to footer. */
+:root {
+  --bg: #eef3f1;        /* misted sage ground */
+  --surface: #ffffff;
+  --ink: #1d2a2c;
+  --ink-soft: #4b5b5e;
+  --teal: #1d4b57;      /* brand primary, matches the guide */
+  --teal-ink: #ffffff;
+  --ochre: #c9932f;     /* single warm accent */
+  --line: #d3dedb;
+  --z-green: #4f8a5b; --z-y1: #d9b13b; --z-y2: #d98a2b; --z-red: #b9473a; --z-blue: #5a7fa6;
+  --display: "Fraunces", Georgia, "Times New Roman", serif;
+  --body: "Source Serif 4", Georgia, "Times New Roman", serif;
+  --ui: "Inter", system-ui, -apple-system, "Segoe UI", sans-serif;
+}
+@media (prefers-color-scheme: dark) { :root:not([data-theme="light"]) {
+  --bg: #12191b; --surface: #1a2427; --ink: #e6eeec; --ink-soft: #a9b8b9; --teal: #7fb6c0; --teal-ink: #0f1d20;
+  --ochre: #e2b25a; --line: #2c3a3d; color-scheme: dark; } }
+:root[data-theme="dark"] {
+  --bg: #12191b; --surface: #1a2427; --ink: #e6eeec; --ink-soft: #a9b8b9; --teal: #7fb6c0; --teal-ink: #0f1d20;
+  --ochre: #e2b25a; --line: #2c3a3d; color-scheme: dark; }
+
+* { box-sizing: border-box; }
+body { background: var(--bg); color: var(--ink); font-family: var(--body); font-size: 1.06rem; line-height: 1.6; margin: 0; }
+.wrap { max-width: 44rem; margin: 0 auto; padding-left: max(16px, env(safe-area-inset-left, 0px)); padding-right: max(16px, env(safe-area-inset-right, 0px)); }
+h1, h2, h3 { font-family: var(--display); font-weight: 600; line-height: 1.15; text-wrap: balance; margin: 0; color: var(--ink); }
+h2 { font-size: clamp(1.5rem, 4.5vw, 2rem); margin-bottom: .8rem; }
+h3 { font-size: 1.15rem; }
+p { margin: 0 0 1rem; }
+.label { font-family: var(--ui); font-size: .72rem; font-weight: 600; letter-spacing: .14em; text-transform: uppercase; color: var(--ochre); margin: 0 0 .7rem; }
+section { padding-block: 3.2rem; border-top: 1px solid var(--line); }
+
+/* zone strip: the regulation ladder from the guide */
+.zones { display: grid; grid-template-columns: repeat(5, 1fr); height: 6px; border-radius: 3px; overflow: hidden; }
+.zones i:nth-child(1) { background: var(--z-green); } .zones i:nth-child(2) { background: var(--z-y1); }
+.zones i:nth-child(3) { background: var(--z-y2); } .zones i:nth-child(4) { background: var(--z-red); } .zones i:nth-child(5) { background: var(--z-blue); }
+
+header.top { padding-block: 1.2rem; }
+.brand { display: flex; align-items: center; gap: .6rem; font-family: var(--display); font-weight: 600; font-size: 1.1rem; color: var(--teal); }
+.mark { width: 28px; height: 28px; border-radius: 50%; background: var(--teal); position: relative; flex: none; }
+.mark::after { content: ""; position: absolute; left: 6px; right: 6px; bottom: 7px; height: 3px; border-radius: 2px; background: var(--bg); }
+
+.hero { padding-block: 2.2rem 3.4rem; }
+.hero h1 { font-size: clamp(2.2rem, 8vw, 3.4rem); letter-spacing: -.01em; margin-bottom: 1rem; }
+.hero .lede { font-size: 1.2rem; color: var(--ink-soft); max-width: 34rem; }
+.hero .zones { max-width: 15rem; margin: 0 0 1.6rem; }
+.cta-row { display: flex; flex-wrap: wrap; align-items: center; gap: .9rem 1.4rem; margin-top: 1.6rem; }
+.btn { display: inline-block; font-family: var(--ui); font-weight: 600; font-size: 1rem; background: var(--teal); color: var(--teal-ink); text-decoration: none;
+  padding: .95rem 1.5rem; border-radius: 999px; }
+.btn:hover { filter: brightness(1.08); }
+.btn:focus-visible, a:focus-visible { outline: 3px solid var(--ochre); outline-offset: 3px; }
+.facts { font-family: var(--ui); font-size: .85rem; color: var(--ink-soft); }
+
+.quote { font-family: var(--display); font-size: clamp(1.25rem, 4vw, 1.55rem); line-height: 1.35; color: var(--teal); border-left: 3px solid var(--ochre); padding-left: 1.1rem; margin: 0; }
+
+.for-list { list-style: none; padding: 0; margin: 0; display: grid; gap: .7rem; }
+.for-list li { padding-left: 1.6rem; position: relative; }
+.for-list li::before { content: ""; position: absolute; left: 0; top: .62em; width: .7rem; height: .7rem; border-radius: 50%; border: 2px solid var(--teal); }
+
+.modules { display: grid; gap: 0; margin-top: 1.4rem; }
+.mod { display: grid; grid-template-columns: 4.2rem 1fr; gap: 1rem; padding-block: 1.3rem; border-top: 1px solid var(--line); }
+.mod:last-child { border-bottom: 1px solid var(--line); }
+.mod .days { font-family: var(--ui); font-size: .72rem; font-weight: 600; letter-spacing: .06em; text-transform: uppercase; color: var(--ink-soft); padding-top: .25rem; }
+.mod .days b { display: block; font-family: var(--display); font-size: 1.9rem; letter-spacing: 0; color: var(--teal); line-height: 1; margin-bottom: .2rem; }
+.mod p { margin: .35rem 0 0; color: var(--ink-soft); font-size: .98rem; }
+.mod > div { min-width: 0; }
+
+.principles { display: grid; gap: 1rem; margin-top: 1.2rem; }
+.principle { background: var(--surface); border: 1px solid var(--line); border-radius: 10px; padding: 1.2rem 1.3rem; }
+.principle p { margin: .4rem 0 0; color: var(--ink-soft); font-size: .98rem; }
+
+.tools { columns: 2 14rem; column-gap: 2rem; padding: 0; margin: 1rem 0 0; list-style: none; }
+.tools li { break-inside: avoid; padding: .45rem 0; border-bottom: 1px dashed var(--line); font-size: .98rem; }
+
+.author { display: grid; grid-template-columns: auto 1fr; gap: 1.2rem; align-items: start; }
+.avatar { width: 64px; height: 64px; border-radius: 50%; background: var(--teal); color: var(--teal-ink); font-family: var(--display); font-size: 1.6rem; display: grid; place-items: center; }
+.author > div:last-child { min-width: 0; }
+.creds { list-style: none; padding: 0; margin: .6rem 0 0; display: grid; gap: .35rem; font-size: .98rem; color: var(--ink-soft); }
+.creds li::before { content: "·"; color: var(--ochre); font-weight: 700; margin-right: .5rem; }
+
+.pkr { background: var(--surface); border: 1px solid var(--line); border-radius: 12px; padding: 1.5rem 1.4rem; }
+.pkr ol { margin: .6rem 0 0; padding-left: 1.2rem; }
+.pkr li { margin: .3rem 0; }
+
+details { border-bottom: 1px solid var(--line); padding-block: 1rem; }
+details:first-of-type { border-top: 1px solid var(--line); }
+summary { cursor: pointer; font-family: var(--display); font-weight: 600; font-size: 1.08rem; list-style: none; display: flex; justify-content: space-between; gap: 1rem; }
+summary::-webkit-details-marker { display: none; }
+summary::after { content: "+"; font-family: var(--ui); color: var(--ochre); }
+details[open] summary::after { content: "–"; }
+details p { margin: .7rem 0 0; color: var(--ink-soft); }
+
+.final { text-align: left; }
+footer { padding-block: 2.4rem 3rem; border-top: 1px solid var(--line); font-family: var(--ui); font-size: .8rem; color: var(--ink-soft); line-height: 1.6; }
+footer .zones { max-width: 8rem; margin-bottom: 1.2rem; }
+.contact { font-family: var(--ui); font-weight: 600; color: var(--ink); user-select: all; }
+
+@media (max-width: 30rem) { .mod { grid-template-columns: 3.2rem 1fr; } .author { grid-template-columns: 1fr; } }
+@media (prefers-reduced-motion: no-preference) { .btn { transition: filter .15s ease; } }
+</style>
+<style>:root{padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)} img{max-width:100%}</style></head><body>
+
+<header class="top"><div class="wrap"><div class="brand"><span class="mark" aria-hidden="true"></span>Calm Ground Parenting</div></div></header>
+
+<main>
+<div class="wrap hero">
+  <div class="zones" aria-hidden="true"><i></i><i></i><i></i><i></i><i></i></div>
+  <p class="label">A 30-day guide for parents of autistic children</p>
+  <h1>The Autism Parent Survival System</h1>
+  <p class="lede">A practical, evidence-informed guide to meltdowns, services, daily routines, relationships and the future, written by a specialist with over a decade of experience supporting autistic children and their families.</p>
+  <div class="cta-row">
+    <a class="btn" href="#buy" id="buy-top">Get the guide</a>
+    <span class="facts">Instant PDF download · 101 A4 pages · printable worksheets</span>
+  </div>
+</div>
+
+<section><div class="wrap">
+  <p class="quote">You have not been failing at parenting. You have been using instructions written for a different situation.</p>
+</div></section>
+
+<section><div class="wrap">
+  <p class="label">Who it's for</p>
+  <h2>For parents who are tired of advice that doesn't fit</h2>
+  <ul class="for-list">
+    <li>Your child has meltdowns and the usual discipline advice makes them worse.</li>
+    <li>You are waiting for an assessment, or have a new diagnosis and don't know where to start.</li>
+    <li>You are exhausted, and generic self-care tips assume time and childcare you don't have.</li>
+    <li>Relatives question your parenting, and friendships have quietly drifted.</li>
+    <li>You lie awake worrying about what happens when your child grows up.</li>
+  </ul>
+</div></section>
+
+<section><div class="wrap">
+  <p class="label">What's inside</p>
+  <h2>Five modules, one week at a time</h2>
+  <p>Each chapter explains why something happens, what helps and how to put it into practice, and ends with a Quick Start box for days when you can only read one page.</p>
+  <div class="modules">
+    <div class="mod"><div class="days"><b>1</b>Days 1 to 7</div><div><h3>Crisis management and regulation</h3><p>Meltdowns versus tantrums, your child's warning signs, prevention in layers, a step-by-step de-escalation protocol and recovery without shame.</p></div></div>
+    <div class="mod"><div class="days"><b>2</b>Days 8 to 14</div><div><h3>Assessment, services and advocacy</h3><p>A faster route to assessment, scripts for professionals who say "wait and see", challenging refusals, and how to judge therapies and providers.</p></div></div>
+    <div class="mod"><div class="days"><b>3</b>Days 15 to 21</div><div><h3>Sustainable daily life</h3><p>Energy management, the 15-minute reset, flexible routines, selective eating, sleep, hygiene and good-enough home management.</p></div></div>
+    <div class="mod"><div class="days"><b>4</b>Days 22 to 28</div><div><h3>Relationships and social support</h3><p>Protecting your partnership, boundaries with extended family, finding your people, public meltdowns and supporting siblings.</p></div></div>
+    <div class="mod"><div class="days"><b>5</b>Days 29 to 30</div><div><h3>Future planning and peace of mind</h3><p>Planning by age and stage, financial and legal safety nets, adult housing, the 3 a.m. anxiety plan and writing a Letter of Intent.</p></div></div>
+  </div>
+</div></section>
+
+<section><div class="wrap">
+  <p class="label">The approach</p>
+  <h2>Built for real families, not ideal ones</h2>
+  <div class="principles">
+    <div class="principle"><h3>Focus on what moves the needle</h3><p>A small number of changes, prioritised well, rather than another long list of things you "should" be doing.</p></div>
+    <div class="principle"><h3>Your wellbeing is part of the plan</h3><p>Your sleep, energy and support network are treated as infrastructure your child depends on.</p></div>
+    <div class="principle"><h3>Systems that work on your worst day</h3><p>Protocols, scripts and routines you can follow when you are depleted, without relying on willpower.</p></div>
+  </div>
+</div></section>
+
+<section><div class="wrap">
+  <p class="label">Tools you can use straight away</p>
+  <h2>Worksheets, scripts and checklists</h2>
+  <ul class="tools">
+    <li>Personal trigger map</li>
+    <li>Meltdown log and weekly review</li>
+    <li>Emergency information sheet</li>
+    <li>One-page profile for teachers and therapists</li>
+    <li>Daily routine planner</li>
+    <li>Services and waiting-list tracker</li>
+    <li>Scripts for doctors, relatives and strangers</li>
+    <li>Weekly partner check-in</li>
+    <li>Letter of Intent checklist</li>
+    <li>Check-ins at days 7, 14, 21, 28 and 30</li>
+  </ul>
+</div></section>
+
+<section><div class="wrap">
+  <p class="label">About the author</p>
+  <div class="author">
+    <div class="avatar" aria-hidden="true">FZ</div>
+    <div>
+      <h3>Written by Fareeha Ziyan</h3>
+      <p style="margin-top:.5rem">Fareeha Ziyan is a specialist in special education and holistic support for autistic children and their families.</p>
+      <ul class="creds">
+        <li>Over ten years of experience in special education and family support</li>
+        <li>Master's degree with Distinction from a UK university</li>
+        <li>Published, peer-reviewed researcher</li>
+        <li>Former member of a government Strategic Advisory Group on policy</li>
+      </ul>
+    </div>
+  </div>
+</div></section>
+
+<section id="buy"><div class="wrap">
+  <p class="label">Get your copy</p>
+  <h2>Download the guide today</h2>
+  <p>Pay securely by card and the PDF arrives in your inbox straight away. Read it on your phone, or print the worksheets.</p>
+  <div class="cta-row">
+    <a class="btn" href="#buy" id="buy-main">Buy with card</a>
+    <span class="facts">Secure checkout · instant download</span>
+  </div>
+</div></section>
+
+<section><div class="wrap">
+  <p class="label">Questions</p>
+  <h2>Frequently asked</h2>
+  <details><summary>What format is the guide?</summary><p>A 101-page A4 PDF. It works on phones, tablets and computers, and the worksheets print cleanly at home.</p></details>
+  <details><summary>Does it apply outside the US or UK?</summary><p>Yes. It is written for families anywhere, with practical questions to ask local services wherever you live, rather than one country's systems.</p></details>
+  <details><summary>My child is a teenager. Is it still useful?</summary><p>Yes. The regulation, routine and relationship chapters apply at any age, and Module 5 covers the teenage years, legal adulthood and planning for adult life.</p></details>
+  <details><summary>Do I have to finish it in 30 days?</summary><p>No. The 30-day structure is a suggested pace. If you only have 15 minutes, the guide tells you exactly which chapter to read first.</p></details>
+  <details><summary>Is this medical advice?</summary><p>No. The guide is general, evidence-informed education. It does not replace individual assessment or advice from professionals who know your child.</p></details>
+  <details><summary>What is your refund policy?</summary><p>Because the guide is a digital download, sales are final once the file has been delivered. If your download doesn't work or the file is damaged, contact us within 14 days and we will send you a working copy.</p></details>
+</div></section>
+
+<section class="final"><div class="wrap">
+  <h2>Start with one chapter tonight</h2>
+  <p>You don't need to read it all at once. One protocol, one routine, one conversation is where change begins.</p>
+  <a class="btn" href="#buy" id="buy-bottom">Get the guide</a>
+</div></section>
+</main>
+
+<footer><div class="wrap">
+  <div class="zones" aria-hidden="true"><i></i><i></i><i></i><i></i><i></i></div>
+  <p style="margin:0 0 .4rem"><strong>Calm Ground Parenting</strong></p>
+  <p style="margin:0 0 .4rem">Contact: <span class="contact">calmgroundparenting@gmail.com</span></p>
+  <p style="margin:0">This guide provides general educational information and is not a substitute for professional medical, psychological, legal or financial advice.</p>
+</div></footer>
+</body></html>
